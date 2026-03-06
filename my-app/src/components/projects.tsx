@@ -1,10 +1,10 @@
 "use client"
 
 import { AnimatedTestimonials, type Testimonial } from "@/components/ui/animated-testimonials"
-import planOfStudyImage from "@/assets/PlanOfStudy.jpg"
-import PersonalWebsiteImage from "@/assets/PersonalWebsite.jpeg"
-import HandTrackingImage from "@/assets/HandTrackingCamera.jpeg"
-import FinacialTrackerImage from "@/assets/FinanceImage.png"
+import planOfStudyImage from "../assets/PlanOfStudy.jpg"
+import PersonalWebsiteImage from "../assets/PersonalWebsite.jpeg"
+import HandTrackingImage from "../assets/HandTrackingCamera.jpeg"
+import FinacialTrackerImage from "../assets/FinanceImage.png"
 import "./projects.css"
 
 const projects: Testimonial[] = [
