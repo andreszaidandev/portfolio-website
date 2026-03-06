@@ -153,7 +153,7 @@ export default function Education() {
           subtitle="Software Engineering, Databases, Algorithms, AI"
           bullets={[
             "Built a strong foundation across both core computer science theory and full-stack development.",
-            "Courseworkincluded data structures and algorithms, database management, computer systems, web development, and a software engineering capstone.",
+            "Coursework included data structures and algorithms, database management, computer systems, web development, and a software engineering capstone.",
           ]}
         />
         </div>

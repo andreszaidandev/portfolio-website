@@ -25,13 +25,20 @@ export const AnimatedTestimonials = ({
   className?: string
 }) => {
   const [active, setActive] = useState(0)
+  const [autoplayResetKey, setAutoplayResetKey] = useState(0)
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length)
+    if (autoplay) {
+      setAutoplayResetKey((prev) => prev + 1)
+    }
   }
 
   const handlePrev = () => {
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+    if (autoplay) {
+      setAutoplayResetKey((prev) => prev + 1)
+    }
   }
 
   const isActive = (index: number) => index === active
@@ -39,9 +46,11 @@ export const AnimatedTestimonials = ({
   useEffect(() => {
     if (!autoplay || testimonials.length <= 1) return
 
-    const interval = setInterval(handleNext, 10000)
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length)
+    }, 10000)
     return () => clearInterval(interval)
-  }, [autoplay, testimonials.length])
+  }, [autoplay, testimonials.length, autoplayResetKey])
 
   const randomRotateY = () => Math.floor(Math.random() * 21) - 10
 
