@@ -37,6 +37,13 @@
   object-position: center;
 }
 
+.animated-testimonials-media-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
 .animated-testimonials-copy {
   position: relative;
   z-index: 2000;
@@ -120,6 +127,16 @@
   transform: rotate(12deg);
 }
 
+.animated-testimonials-links
+{
+  display: inline-flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
 @media (min-width: 768px) {
   .animated-testimonials {
     padding-inline: 1.4rem;
@@ -147,5 +164,11 @@
 
   .animated-testimonials-media-stage {
     height: 18.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .animated-testimonials-links {
+    flex-wrap: wrap;
   }
 }

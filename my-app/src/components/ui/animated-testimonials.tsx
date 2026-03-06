@@ -11,6 +11,8 @@ export type Testimonial = {
   name: string
   designation: string
   src: string
+  href?: string
+  github?: string
 }
 
 export const AnimatedTestimonials = ({
@@ -84,13 +86,33 @@ export const AnimatedTestimonials = ({
                     ease: "easeInOut",
                   }}
                   className="animated-testimonials-media-card"
+                  style={{
+                    pointerEvents: isActive(index) ? "auto" : "none",
+                  }}
                 >
-                  <img
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    draggable={false}
-                    className="animated-testimonials-media-image"
-                  />
+                  {testimonial.href ? (
+                    <a
+                      href={testimonial.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="animated-testimonials-media-link"
+                      aria-label={`Open ${testimonial.name} website`}
+                    >
+                      <img
+                        src={testimonial.src}
+                        alt={testimonial.name}
+                        draggable={false}
+                        className="animated-testimonials-media-image"
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      draggable={false}
+                      className="animated-testimonials-media-image"
+                    />
+                  )}
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -160,6 +182,18 @@ export const AnimatedTestimonials = ({
             >
               <IconArrowRight className="animated-testimonials-control-icon" />
             </button>
+            <div className="animated-testimonials-links">
+              {testimonials[active].github ? (
+                <a
+                  href={testimonials[active].github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="animated-testimonials-link"
+                >
+                  View Github
+                </a>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
