@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import resumePdf from "@/assets/resume.pdf";
+import resumePdf from "@/assets/AndresZaidan_Resume_Mar2026.pdf";
 import "./resume.css";
 
 export default function ResumeSection() {
